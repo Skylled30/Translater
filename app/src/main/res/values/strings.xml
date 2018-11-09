@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Translater</string>
+    <string name="text1">Введите текст</string>
+    <string name="text2">Перевод текста</string>
+    <string-array name="lang">
+        <item>RU</item>
+        <item>EN</item>
+        <item>FR</item>
+        <item>ZH</item>
+        <item>ES</item>
+    </string-array>
+</resources>
