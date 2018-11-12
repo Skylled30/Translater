@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -35,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editText1 = (EditText) findViewById(R.id.editText1);
-        editText2 = (EditText) findViewById(R.id.editText2);
-        translate = (Button) findViewById(R.id.button);
-        clear = (Button) findViewById(R.id.button2);
-        change = (Button) findViewById(R.id.button3);
-        lang_in = (Spinner) findViewById(R.id.spinner1);
-        lang_out = (Spinner) findViewById(R.id.spinner2);
+        editText1 = findViewById(R.id.editText1);
+        editText2 = findViewById(R.id.editText2);
+        translate = findViewById(R.id.button);
+        clear = findViewById(R.id.button2);
+        change = findViewById(R.id.button3);
+        lang_in = findViewById(R.id.spinner1);
+        lang_out = findViewById(R.id.spinner2);
         //определяю все языки в keys
         mt = new MyTask();
         mt.execute(getLanguages + "&ui=ru");
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             }
             return buf.toString();
         } catch (Exception e){
-            e.toString();
+            Log.d("error", e.toString());
         }
         return null;
     }
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         lang_out.setAdapter(adapter);
     }
 
-    //получение номера из контактов и отправка номера на звонок
+    //получение номера из контактов и отправка номера на звон
     /*
     public void mapClick(View v){
         Intent i = new Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
