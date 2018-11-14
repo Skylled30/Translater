@@ -154,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
             keys[i] = arrayKeys.getString(i).toUpperCase();
         }
         return keys;
+        //
     }
 
     public void loadArrayToSpinner(){
